@@ -4,22 +4,28 @@ import { useEffect, useState } from 'react';
 import * as API from '../APIcalls';
 
 const SpellSearch = () => {
-  const [spells, setSpells] = useState(null);
-  const [spellDetails, setSpellDetails] = useState(null);
+  const [spells, setSpells] = useState([]);
+  const [spellDetails, setSpellDetails] = useState([]);
   const searchCriteria = useParams().pcClass;
 
   useEffect(() => {
-    // if (spellDetails && spells) return;
     API.fetchSpells(searchCriteria).then((data) => setSpells(data.results));
-
-    // if (spells) {
-    //   spells.map((spell) =>
-    //     API.fetchSpellDetails(spell).then((data) =>
-    //       setSpellDetails(data.results)
-    //     )
-    //   );
-    // }
   }, []);
+
+  useEffect(() => {
+    if (spells.length === spellDetails.length) return;
+    let returnedDetails = [];
+
+    spells.forEach((spell) =>
+      API.fetchSpellDetails(spell.index)
+        .then((data) => returnedDetails.push(data))
+        .then(() => {
+          if (returnedDetails.length === spells.length) {
+            setSpellDetails(returnedDetails);
+          }
+        })
+    );
+  }, [spells]);
 
   return <h1>Spell Search for {searchCriteria}</h1>;
 };
