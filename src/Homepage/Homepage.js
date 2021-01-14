@@ -20,8 +20,14 @@ const Homepage = () => {
 
   const createPcClassLink = (pcClass) => {
     return (
-      <div>
-        <Link to={`/spells/${pcClass}`}>
+      <div key={pcClass}>
+        <Link
+          to={{
+            pathname: `/spells/${pcClass}`,
+            state: { searchParam: pcClass },
+          }}
+          // TODO: Refactor, remove state if not needed
+        >
           {pcClass.charAt(0).toUpperCase() + pcClass.slice(1)}
         </Link>
       </div>

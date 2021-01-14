@@ -8,16 +8,10 @@ const App = () => {
   return (
     <div className="App">
       <Switch>
+        <Route exact path="/" component={Homepage} />
         <Route
           exact
-          path="/"
-          render={() => {
-            return <Homepage />;
-          }}
-        />
-        <Route
-          exact
-          path="/spells"
+          path="/spells/:pcClass"
           render={() => {
             return <SpellSearch />;
           }}
