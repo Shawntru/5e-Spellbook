@@ -13,7 +13,6 @@ const SpellSearch = () => {
   }, []);
 
   useEffect(() => {
-    if (spells.length === spellDetails.length) return;
     let returnedDetails = [];
 
     spells.forEach((spell) =>
