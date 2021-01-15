@@ -3,20 +3,15 @@ import React from 'react';
 
 const SpellCard = ({ spell }) => {
   return (
-    <section>
+    <section className="card-wrapper">
       <h3 key={spell.index}>{spell.name}</h3>
-      <p>
-        {/* {() => {
-          if (spell.level === 0) {
-            return 'Cantrip';
-          } else {
-            return `<b>Level:</b> ${spell.level}`;
-          }
-        }} */}
-      </p>
-      <p>
-        <b>School</b> {spell.school.name}
-      </p>
+      {spell.level === 0 && <p>Cantrip</p>}
+      {spell.level > 0 && (
+        <p>
+          <b>Level</b> {spell.level}
+        </p>
+      )}
+      <p>{spell.school.name}</p>
       <p>
         <b>Casting Time</b> {spell.casting_time}
       </p>
