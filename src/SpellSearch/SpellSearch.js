@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from 'react-router-dom';
-import './SpellSearch';
+import './SpellSearch.scss';
 import { useEffect, useState } from 'react';
 import * as API from '../APIcalls';
 import SpellCard from '../SpellCard/SpellCard';
+import SpellDetails from '../SpellDetails/SpellDetails';
 
 const SpellSearch = () => {
   const [spells, setSpells] = useState([]);
   const [spellDetails, setSpellDetails] = useState([]);
+  const [displayedSpell, setDisplayedSpell] = useState({});
   const searchCriteria = useParams().pcClass;
 
   useEffect(() => {
@@ -30,15 +32,31 @@ const SpellSearch = () => {
   }, [spells]);
 
   const createSpellCard = (spell) => {
-    return <SpellCard key={spell.index} spell={spell} />;
+    return (
+      <div
+        key={spell.index}
+        onClick={() => {
+          setDisplayedSpell(spell);
+        }}
+      >
+        <SpellCard spell={spell} />
+      </div>
+    );
   };
 
   return (
     <section>
       <h1>Spell Search for {searchCriteria}</h1>
-      {spellDetails && (
-        <div>{spellDetails.map((spell) => createSpellCard(spell))}</div>
-      )}
+      <div className="all-spell-wrapper">
+        {spellDetails && (
+          <div className="spell-cards-wrapper">
+            {spellDetails.map((spell) => createSpellCard(spell))}
+          </div>
+        )}
+        <div className="spell-detail-wrapper">
+          <SpellDetails spell={displayedSpell} />
+        </div>
+      </div>
     </section>
   );
 };

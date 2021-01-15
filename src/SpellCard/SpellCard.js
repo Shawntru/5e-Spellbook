@@ -2,27 +2,24 @@ import './SpellCard.scss';
 import React from 'react';
 
 const SpellCard = ({ spell }) => {
+  const { index, name, level, school, casting_time, range } = spell;
+
   return (
-    <section className="card-wrapper">
-      <h3 key={spell.index}>{spell.name}</h3>
-      {spell.level === 0 && <p>Cantrip</p>}
-      {spell.level > 0 && (
+    <section className="solo-card-wrapper">
+      <h3 key={index}>{name}</h3>
+      {level === 0 && <p>Cantrip</p>}
+      {level > 0 && (
         <p>
-          <b>Level</b> {spell.level}
+          <b>Level</b> {level}
         </p>
       )}
-      <p>{spell.school.name}</p>
+      <p>{school.name}</p>
       <p>
-        <b>Casting Time</b> {spell.casting_time}
+        <b>Casting Time</b> {casting_time}
       </p>
       <p>
-        <b>Range</b> {spell.range}
+        <b>Range</b> {range}
       </p>
-      {/* {spell.damage && (
-        <p>
-          <b>Damage Type</b> {spell.damage.damage_type.name}
-        </p>
-      )} */}
     </section>
   );
 };
