@@ -9,7 +9,7 @@ import SpellDetails from '../SpellDetails/SpellDetails';
 const SpellSearch = () => {
   const [spells, setSpells] = useState([]);
   const [spellDetails, setSpellDetails] = useState([]);
-  const [displayedSpell, setDisplayedSpell] = useState({});
+  const [displayedSpell, setDisplayedSpell] = useState(null);
   const searchCriteria = useParams().pcClass;
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const SpellSearch = () => {
           </div>
         )}
         <div className="spell-detail-wrapper">
-          <SpellDetails spell={displayedSpell} />
+          {displayedSpell && <SpellDetails spell={displayedSpell} />}
         </div>
       </div>
     </section>

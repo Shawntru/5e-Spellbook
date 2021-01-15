@@ -2,7 +2,16 @@ import './SpellCard.scss';
 import React from 'react';
 
 const SpellCard = ({ spell }) => {
-  const { index, name, level, school, casting_time, range } = spell;
+  const {
+    index,
+    name,
+    level,
+    school,
+    casting_time,
+    range,
+    damage,
+    area_of_effect,
+  } = spell;
 
   return (
     <section className="solo-card-wrapper">
@@ -20,6 +29,10 @@ const SpellCard = ({ spell }) => {
       <p>
         <b>Range</b> {range}
       </p>
+      {damage && (
+        <div>{damage.damage_type && <p>{damage.damage_type.name}</p>}</div>
+      )}
+      {area_of_effect && <p>{console.log(spell)}</p>}
     </section>
   );
 };
