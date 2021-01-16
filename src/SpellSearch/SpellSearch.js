@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import * as API from '../APIcalls';
 import SpellCard from '../SpellCard/SpellCard';
 import SpellDetails from '../SpellDetails/SpellDetails';
+import SpellBook from '../SpellBook/SpellBook';
 
 const SpellSearch = () => {
   const [spells, setSpells] = useState([]);
@@ -76,19 +77,20 @@ const SpellSearch = () => {
 
   if (searchCriteria === 'spellbook') {
     return (
-      <section className="search-wrapper">
-        <h1>My Spell Book</h1>
-        <div className="all-spell-wrapper">
-          <div className="spell-details-wrapper">
-            {displayedSpell && <SpellDetails spell={displayedSpell} />}
-          </div>
-          {spellBook && (
-            <div className="spell-cards-wrapper">
-              {spellBook.map((spell) => createSpellCard(spell))}
-            </div>
-          )}
-        </div>
-      </section>
+      <section>{spellBook && <SpellBook spellBook={spellBook} />}</section>
+      // <section className="search-wrapper">
+      //   <h1>My Spell Book</h1>
+      //   <div className="all-spell-wrapper">
+      //     <div className="spell-details-wrapper">
+      //       {displayedSpell && <SpellDetails spell={displayedSpell} />}
+      //     </div>
+      //     {spellBook && (
+      //       <div className="spell-cards-wrapper">
+      //         {spellBook.map((spell) => createSpellCard(spell))}
+      //       </div>
+      //     )}
+      //   </div>
+      // </section>
     );
   } else {
     return (
