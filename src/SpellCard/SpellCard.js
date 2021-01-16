@@ -1,8 +1,13 @@
 import './SpellCard.scss';
 import React from 'react';
+import plusIcon from '../assets/plus-icon.png';
 
 const SpellCard = ({ spell }) => {
   const { index, name, level, school, casting_time, range, damage } = spell;
+
+  const addToSpellBook = () => {
+    localStorage.setItem(`spell-book-${spell.index}`, spell.index);
+  };
 
   return (
     <section className="solo-card-wrapper">
@@ -25,6 +30,12 @@ const SpellCard = ({ spell }) => {
           <div>{damage.damage_type && <p>{damage.damage_type.name}</p>}</div>
         )}
         {/* {area_of_effect && <p>{console.log(spell)}</p>} */}
+        <img
+          src={plusIcon}
+          alt="add button"
+          className="plus-icon"
+          onClick={() => addToSpellBook()}
+        />
       </div>
     </section>
   );
