@@ -1,1 +1,10 @@
 @import '../variables';
+
+.spell-details-internal-wrapper {
+  padding: 5em 6em;
+  background-image: url('../assets/scroll-backdrop.png');
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-size: 100% 100%;
+}

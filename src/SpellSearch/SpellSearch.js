@@ -45,7 +45,7 @@ const SpellSearch = () => {
   };
 
   return (
-    <section>
+    <section className="search-wrapper">
       <h1>Spell Search for {searchCriteria}</h1>
       <div className="all-spell-wrapper">
         {spellDetails && (
@@ -53,7 +53,7 @@ const SpellSearch = () => {
             {spellDetails.map((spell) => createSpellCard(spell))}
           </div>
         )}
-        <div className="spell-detail-wrapper">
+        <div className="spell-details-wrapper">
           {displayedSpell && <SpellDetails spell={displayedSpell} />}
         </div>
       </div>

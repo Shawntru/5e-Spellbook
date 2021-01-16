@@ -31,7 +31,7 @@ const SpellDetails = ({ spell }) => {
   };
 
   return (
-    <section>
+    <section className="spell-details-internal-wrapper">
       <h1>{name}</h1>
       {level === 0 && <p>Cantrip</p>}
       {level > 0 && <p>Level {level}</p>}
@@ -39,23 +39,21 @@ const SpellDetails = ({ spell }) => {
       {classes && <p>{showReleventClasses(classes)}</p>}
       {desc && <p>{desc.join(' ')}</p>}
       <div>
-        <p>
-          <b>Range:</b> {range}{' '}
-        </p>
+        <h4>Range:</h4> <p>{range}</p>
         {area_of_effect && (
           <p>
             ({area_of_effect.size} ft {area_of_effect.type})
           </p>
         )}
       </div>
-      <p>
-        <b>Components:</b> {components}
-      </p>
+      <div>
+        <h4>Components:</h4> <p>{components}</p>
+      </div>
       <p>{material}</p>
       {ritual && <p>Ritual</p>}
-      <p>
-        <b>Duration:</b> {duration}
-      </p>
+      <div>
+        <h4>Duration:</h4> <p>{duration}</p>
+      </div>
       {concentration && <p>Concentration</p>}
       <p>{casting_time}</p>
       {higher_level && <p>{higher_level.join(' ')}</p>}
@@ -66,6 +64,9 @@ const SpellDetails = ({ spell }) => {
             <p>
               (Quick reference: Level{' '}
               {showDamageAtLevel(damage.damage_at_slot_level)})
+              {
+                // TODO: Add Quick reference for saving throws
+              }
             </p>
           )}
         </div>
