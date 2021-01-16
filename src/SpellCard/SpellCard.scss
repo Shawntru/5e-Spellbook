@@ -8,7 +8,7 @@
 
 .solo-card-details {
   display: flex;
-  margin: 0 1em;
+  margin: 0 0.5em;
 }
 
 .card-spell-name {
@@ -17,7 +17,13 @@
   border-bottom: black 1px solid;
 }
 
-.plus-icon {
-  height: 3em;
+.plus-minus-icon {
   width: 3em;
+  margin: 1em;
+}
+
+.solo-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

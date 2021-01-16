@@ -10,13 +10,34 @@ const SpellSearch = () => {
   const [spells, setSpells] = useState([]);
   const [spellDetails, setSpellDetails] = useState([]);
   const [displayedSpell, setDisplayedSpell] = useState(null);
+  const [spellBook, setSpellBook] = useState([]);
   const searchCriteria = useParams().pcClass;
 
-  useEffect(() => {
+  const fetchAllClassSpells = () => {
     API.fetchSpells(searchCriteria).then((data) => {
       setSpells(data.results);
     });
-  }, []);
+  };
+
+  const loadSpellBookSpells = () => {
+    let spellBookSpells = [];
+    Object.values(localStorage).forEach((spell) =>
+      API.fetchSpellDetails(spell).then((data) => {
+        spellBookSpells.push(data);
+        if (localStorage.length === spellBookSpells.length) {
+          setSpellBook(spellBookSpells);
+        }
+      })
+    );
+  };
+
+  useEffect(() => {
+    if (searchCriteria === 'spellbook') {
+      loadSpellBookSpells();
+    } else {
+      fetchAllClassSpells();
+    }
+  }, [localStorage]);
 
   useEffect(() => {
     let returnedDetails = [];
@@ -44,21 +65,42 @@ const SpellSearch = () => {
     );
   };
 
-  return (
-    <section className="search-wrapper">
-      <h1>Spell Search for {searchCriteria}</h1>
-      <div className="all-spell-wrapper">
-        {spellDetails && (
-          <div className="spell-cards-wrapper">
-            {spellDetails.map((spell) => createSpellCard(spell))}
+  if (searchCriteria === 'spellbook') {
+    return (
+      <section className="search-wrapper">
+        <h1>My Spell Book</h1>
+        <div className="all-spell-wrapper">
+          <div className="spell-details-wrapper">
+            {displayedSpell && <SpellDetails spell={displayedSpell} />}
           </div>
-        )}
-        <div className="spell-details-wrapper">
-          {displayedSpell && <SpellDetails spell={displayedSpell} />}
+          {spellBook && (
+            <div className="spell-cards-wrapper">
+              {spellBook.map((spell) => createSpellCard(spell))}
+            </div>
+          )}
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  } else {
+    return (
+      <section className="search-wrapper">
+        <h1>
+          Spell Scrolls for{' '}
+          {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)}
+        </h1>
+        <div className="all-spell-wrapper">
+          {spellDetails && (
+            <div className="spell-cards-wrapper">
+              {spellDetails.map((spell) => createSpellCard(spell))}
+            </div>
+          )}
+          <div className="spell-details-wrapper">
+            {displayedSpell && <SpellDetails spell={displayedSpell} />}
+          </div>
+        </div>
+      </section>
+    );
+  }
 };
 
 export default SpellSearch;

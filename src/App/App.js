@@ -11,7 +11,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/spells/:pcClass" component={SpellSearch} />
-        <Route exact path="/spellbook" component={SpellBook} />
+        <Route exact path="/spells/spellbook" component={SpellBook} />
       </Switch>
     </div>
   );
