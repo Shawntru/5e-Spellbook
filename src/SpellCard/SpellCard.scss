@@ -1,0 +1,23 @@
+@import '../variables';
+
+.solo-card-wrapper {
+  border: black 1px solid;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.solo-card-details {
+  display: flex;
+  margin: 0 1em;
+}
+
+.card-spell-name {
+  width: 50%;
+  margin: 1em 0 0 1em;
+  border-bottom: black 1px solid;
+}
+
+.plus-icon {
+  height: 3em;
+  width: 3em;
+}

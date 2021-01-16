@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   const pcClasses = [
-    'barbarian',
+    // 'barbarian',
     'bard',
     'cleric',
     'druid',
-    'fighter',
-    'monk',
+    // 'fighter',
+    // 'monk',
     'paladin',
     'ranger',
-    'rogue',
+    // 'rogue',
     'sorcerer',
     'warlock',
     'wizard',

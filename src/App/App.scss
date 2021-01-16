@@ -1,3 +1,19 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Lusitana', serif;
+}
+
+p {
+  margin: 1em 0.5em;
+  font-family: 'Roboto', sans-serif;
 }
