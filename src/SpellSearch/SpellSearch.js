@@ -19,13 +19,22 @@ const SpellSearch = () => {
     });
   };
 
+  const sortSpells = (spells) => {
+    return spells.sort(
+      (orderedSpell, spell) => orderedSpell.level - spell.level
+      // || orderedSpell.name < spell.name
+      //   ? 1
+      //   : -1
+    );
+  };
+
   const loadSpellBookSpells = () => {
     let spellBookSpells = [];
     Object.values(localStorage).forEach((spell) =>
       API.fetchSpellDetails(spell).then((data) => {
         spellBookSpells.push(data);
         if (localStorage.length === spellBookSpells.length) {
-          setSpellBook(spellBookSpells);
+          setSpellBook(sortSpells(spellBookSpells));
         }
       })
     );
@@ -37,7 +46,7 @@ const SpellSearch = () => {
     } else {
       fetchAllClassSpells();
     }
-  }, [localStorage]);
+  }, []);
 
   useEffect(() => {
     let returnedDetails = [];
