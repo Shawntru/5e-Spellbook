@@ -11,8 +11,8 @@ const SpellSearch = () => {
   const [spellDetails, setSpellDetails] = useState([]);
   const [displayedSpell, setDisplayedSpell] = useState(null);
   const searchCriteria = useParams().pcClass;
-
-  const fetchListOfClassSpells = () => {
+  
+  const fetchAllClassSpells = () => {
     API.fetchSpells(searchCriteria).then((data) => {
       setSpells(data.results);
     });
@@ -67,11 +67,15 @@ const SpellSearch = () => {
           {displayedSpell && (
             <SpellDetails spell={displayedSpell} view="scroll" />
           )}
+          <div className="spell-details-wrapper">
+            {displayedSpell && (
+              <SpellDetails spell={displayedSpell} view="scroll" />
+            )}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 };
-// };
 
 export default SpellSearch;

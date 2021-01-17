@@ -15,6 +15,7 @@ const SpellDetails = ({ spell, view }) => {
     concentration,
     casting_time,
     level,
+    damage,
     school,
     classes,
     area_of_effect,
