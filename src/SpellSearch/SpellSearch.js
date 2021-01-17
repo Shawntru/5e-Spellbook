@@ -23,9 +23,6 @@ const SpellSearch = () => {
   const sortSpells = (spells) => {
     return spells.sort(
       (orderedSpell, spell) => orderedSpell.level - spell.level
-      // || orderedSpell.name < spell.name
-      //   ? 1
-      //   : -1
     );
   };
 
@@ -80,19 +77,6 @@ const SpellSearch = () => {
       <section>
         {spellBook.length > 0 && <SpellBook spellBook={spellBook} />}
       </section>
-      // <section className="search-wrapper">
-      //   <h1>My Spell Book</h1>
-      //   <div className="all-spell-wrapper">
-      //     <div className="spell-details-wrapper">
-      //       {displayedSpell && <SpellDetails spell={displayedSpell} />}
-      //     </div>
-      //     {spellBook && (
-      //       <div className="spell-cards-wrapper">
-      //         {spellBook.map((spell) => createSpellCard(spell))}
-      //       </div>
-      //     )}
-      //   </div>
-      // </section>
     );
   } else {
     return (
@@ -108,7 +92,9 @@ const SpellSearch = () => {
             </div>
           )}
           <div className="spell-details-wrapper">
-            {displayedSpell && <SpellDetails spell={displayedSpell} />}
+            {displayedSpell && (
+              <SpellDetails spell={displayedSpell} view="scroll" />
+            )}
           </div>
         </div>
       </section>

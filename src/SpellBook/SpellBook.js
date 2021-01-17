@@ -3,10 +3,6 @@ import React, { useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import SpellDetails from '../SpellDetails/SpellDetails';
 
-const PageCover = React.forwardRef(() => {
-  return <div className="page page-cover">Spell Cover</div>;
-});
-
 const SpellBook = ({ spellBook }) => {
   const createSpellPage = () => {
     return spellBook.map((spell) => {
@@ -36,7 +32,7 @@ const SpellBook = ({ spellBook }) => {
           maxShadowOpacity={0.5}
           showCover={true}
         >
-          <PageCover>Spells</PageCover>
+          <div className="book-cover" number={0}></div>
           {createSpellPage()}
         </HTMLFlipBook>
       </div>

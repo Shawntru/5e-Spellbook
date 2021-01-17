@@ -2,10 +2,31 @@
 
 .spell-book-view-wrapper {
   width: 100%;
+  height: 100vh;
+  background-image: url('../assets/writing-desk.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .spellbook-wrapper {
-  border: green 2px solid;
-  width: 75%;
-  height: 75vh;
+  padding: 2em;
+  width: 65%;
+}
+
+.page {
+  background-image: url('../assets/book-page.jpg');
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.book-cover {
+  @extend .page;
+  background-image: url('../assets/book-cover.jpg');
 }

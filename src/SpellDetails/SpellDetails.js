@@ -1,7 +1,8 @@
 import './SpellDetails.scss';
 import React from 'react';
+import scrollImg from '../assets/scroll-backdrop.png';
 
-const SpellDetails = ({ spell }) => {
+const SpellDetails = ({ spell, view }) => {
   const {
     name,
     desc,
@@ -19,6 +20,7 @@ const SpellDetails = ({ spell }) => {
     classes,
     area_of_effect,
   } = spell;
+  let styling = {};
 
   const showDamageAtLevel = (levels) => {
     return Object.entries(levels)
@@ -30,8 +32,19 @@ const SpellDetails = ({ spell }) => {
     return classes.map((school) => school.name).join(', ');
   };
 
+  if (view === 'scroll') {
+    styling = {
+      backgroundImage: `url(${scrollImg})`,
+      padding: '5em 6em 7em 6em',
+    };
+  } else {
+    styling = {
+      padding: '2.5em',
+    };
+  }
+
   return (
-    <section className="spell-details-internal-wrapper">
+    <section className="spell-details-internal-wrapper" style={styling}>
       <h2 className="spell-detail-title">{name}</h2>
       <div className="same-group">
         <div className="same-level">
@@ -56,6 +69,7 @@ const SpellDetails = ({ spell }) => {
         </div>
         <h4>{components}</h4>
       </div>
+      <h4>Casting Time: {casting_time}</h4>
       <h4>Duration: {duration}</h4>
       {material && <p>Materials: {material}</p>}
       {classes && <p>{showReleventClasses(classes)}</p>}
