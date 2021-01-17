@@ -15,18 +15,18 @@ const SpellDetails = ({ spell, view }) => {
     concentration,
     casting_time,
     level,
+    damage,
     school,
     classes,
     area_of_effect,
-    // damage,
   } = spell;
   let styling = {};
 
-  // const showDamageAtLevel = (levels) => {
-  //   return Object.entries(levels)
-  //     .map((level) => level.join(' - '))
-  //     .join('; ');
-  // };
+  const showDamageAtLevel = (levels) => {
+    return Object.entries(levels)
+      .map((level) => level.join(' - '))
+      .join('; ');
+  };
 
   const showReleventClasses = (classes) => {
     return classes.map((school) => school.name).join(', ');
