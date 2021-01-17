@@ -16,20 +16,26 @@ const Homepage = () => {
 
   const createPcClassLink = (pcClass) => {
     return (
-      <div key={pcClass}>
-        <Link to={`/spells/${pcClass}`}>
-          {pcClass.charAt(0).toUpperCase() + pcClass.slice(1)}
-        </Link>
-      </div>
+      <Link
+        to={`/spells/${pcClass}`}
+        key={pcClass}
+        className="class-card-wrapper"
+      >
+        <div className="leather-background">
+          <h1>{pcClass.charAt(0).toUpperCase() + pcClass.slice(1)}</h1>
+        </div>
+      </Link>
     );
   };
 
   return (
-    <section>
-      <h1>The Dusty Tome</h1>
-      <div>{pcClasses.map((pcClass) => createPcClassLink(pcClass))}</div>
-      <div>
-        <Link to={'/spellbook'}>My Spell Book</Link>
+    <section className="homepage-wrapper">
+      <h1 className="homepage-header">Search for Spells by Class:</h1>
+      <div className="all-classes-wrapper">
+        {pcClasses.map((pcClass) => createPcClassLink(pcClass))}{' '}
+        <Link className="class-card-wrapper" to={'/spellbook'}>
+          <h1>Go To Spell Book</h1>
+        </Link>
       </div>
     </section>
   );

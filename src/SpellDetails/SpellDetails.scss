@@ -31,5 +31,16 @@
 }
 
 .desc-wrapper::-webkit-scrollbar {
-  width: 0 !important;
+  width: 10px !important;
+  background-color: transparent;
+}
+
+.desc-wrapper::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    circle,
+    rgba(175, 138, 104, 1) 3%,
+    rgba(113, 75, 1, 1) 76%
+  );
+  border-radius: 10px;
+  border: #332200 1px solid;
 }
