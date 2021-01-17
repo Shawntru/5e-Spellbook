@@ -18,15 +18,8 @@ const SpellDetails = ({ spell, view }) => {
     school,
     classes,
     area_of_effect,
-    // damage,
   } = spell;
   let styling = {};
-
-  // const showDamageAtLevel = (levels) => {
-  //   return Object.entries(levels)
-  //     .map((level) => level.join(' - '))
-  //     .join('; ');
-  // };
 
   const showReleventClasses = (classes) => {
     return classes.map((school) => school.name).join(', ');
@@ -78,20 +71,6 @@ const SpellDetails = ({ spell, view }) => {
         {desc && <p>{desc.join(' ')}</p>}
         {higher_level && <p>At Higher Levels: {higher_level.join(' ')}</p>}
       </div>
-      {/* {damage && (
-        <div>
-          <p>Damage Type: {damage.damage_type.name}</p>
-          {damage.damage_at_slot_level && (
-            <p>
-              (Quick reference: Level{' '}
-              {showDamageAtLevel(damage.damage_at_slot_level)})
-              {
-                // TODO: Add Quick reference for saving throws
-              }
-            </p>
-          )}
-        </div>
-      )} */}
     </section>
   );
 };
