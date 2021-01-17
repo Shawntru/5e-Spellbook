@@ -75,20 +75,21 @@ const SpellSearch = () => {
   if (searchCriteria === 'spellbook') {
     return (
       <section>
-        {spellBook.length > 0 && <SpellBook spellBook={spellBook} />}
+        <SpellBook spellBook={spellBook} />
       </section>
     );
   } else {
     return (
       <section className="search-wrapper">
-        <h1>
-          Spell Scrolls for{' '}
-          {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)}
-        </h1>
         <div className="all-spell-wrapper">
           {spellDetails && (
             <div className="spell-cards-wrapper">
-              {spellDetails.map((spell) => createSpellCard(spell))}
+              <h1 className="search-criteria-title">
+                Spell Scrolls for{' '}
+                {searchCriteria.charAt(0).toUpperCase() +
+                  searchCriteria.slice(1)}
+              </h1>
+              {spellDetails.map((spell) => createSpellCard(spell))}{' '}
             </div>
           )}
           <div className="spell-details-wrapper">

@@ -10,7 +10,7 @@
   background-size: cover;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .spellbook-wrapper {
@@ -29,4 +29,20 @@
 .book-cover {
   @extend .page;
   background-image: url('../assets/book-cover.jpg');
+}
+
+.no-scrolls-warning {
+  border: 2px $bronze solid;
+  text-align: center;
+  width: 35%;
+  padding: 3em;
+  color: floralwhite;
+}
+
+.warning-wrapper {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

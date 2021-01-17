@@ -40,6 +40,7 @@ const SpellDetails = ({ spell, view }) => {
   } else {
     styling = {
       padding: '2.5em',
+      height: '100vh',
     };
   }
 
@@ -73,9 +74,11 @@ const SpellDetails = ({ spell, view }) => {
       <h4>Duration: {duration}</h4>
       {material && <p>Materials: {material}</p>}
       {classes && <p>{showReleventClasses(classes)}</p>}
-      {desc && <p>{desc.join(' ')}</p>}
-      {higher_level && <p>At Higher Levels: {higher_level.join(' ')}</p>}
-      {damage && (
+      <div className="desc-wrapper">
+        {desc && <p>{desc.join(' ')}</p>}
+        {higher_level && <p>At Higher Levels: {higher_level.join(' ')}</p>}
+      </div>
+      {/* {damage && (
         <div>
           <p>Damage Type: {damage.damage_type.name}</p>
           {damage.damage_at_slot_level && (
@@ -88,7 +91,7 @@ const SpellDetails = ({ spell, view }) => {
             </p>
           )}
         </div>
-      )}
+      )} */}
     </section>
   );
 };

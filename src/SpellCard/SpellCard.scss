@@ -1,9 +1,11 @@
 @import '../variables';
 
 .solo-card-wrapper {
-  border: black 1px solid;
+  border: $bronze 1px solid;
   width: 100%;
   margin: 1em 0;
+  color: black;
+  background: rgba(255, 250, 240, 0.65);
 }
 
 .solo-card-details {
