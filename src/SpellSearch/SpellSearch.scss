@@ -5,16 +5,30 @@
 }
 
 .spell-cards-wrapper {
-  width: 50%;
+  width: 40%;
   padding: 1em;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.spell-cards-wrapper::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .all-spell-wrapper {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .spell-details-wrapper {
-  width: 50%;
+  width: 40%;
+  margin: 3em 1em;
+  // display: flex;
+  // align-items: flex-start;
+}
+
+.search-criteria-title {
+  text-align: center;
+  color: $bronze;
 }

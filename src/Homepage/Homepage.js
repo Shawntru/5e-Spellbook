@@ -4,15 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   const pcClasses = [
-    // 'barbarian',
     'bard',
     'cleric',
     'druid',
-    // 'fighter',
-    // 'monk',
     'paladin',
     'ranger',
-    // 'rogue',
     'sorcerer',
     'warlock',
     'wizard',
@@ -21,13 +17,7 @@ const Homepage = () => {
   const createPcClassLink = (pcClass) => {
     return (
       <div key={pcClass}>
-        <Link
-          to={{
-            pathname: `/spells/${pcClass}`,
-            state: { searchParam: pcClass },
-          }}
-          // TODO: Refactor, remove state if not needed
-        >
+        <Link to={`/spells/${pcClass}`}>
           {pcClass.charAt(0).toUpperCase() + pcClass.slice(1)}
         </Link>
       </div>
@@ -38,6 +28,9 @@ const Homepage = () => {
     <section>
       <h1>The Dusty Tome</h1>
       <div>{pcClasses.map((pcClass) => createPcClassLink(pcClass))}</div>
+      <div>
+        <Link to={'/spells/spellbook'}>My Spell Book</Link>
+      </div>
     </section>
   );
 };

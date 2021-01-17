@@ -1,10 +1,35 @@
 @import '../variables';
 
 .spell-details-internal-wrapper {
-  padding: 5em 6em 7em 6em;
-  background-image: url('../assets/scroll-backdrop.png');
   background-repeat: no-repeat;
-  background-attachment: inherit;
   background-position: center;
   background-size: 100% 100%;
+}
+
+.spell-detail-title {
+  text-align: center;
+  border-bottom: black 1px solid;
+}
+
+.same-level {
+  display: flex;
+}
+
+.same-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-cover {
+  background-image: url('../assets/book-cover.jpg');
+}
+
+.desc-wrapper {
+  overflow-y: scroll;
+  max-height: 18em;
+}
+
+.desc-wrapper::-webkit-scrollbar {
+  width: 0 !important;
 }

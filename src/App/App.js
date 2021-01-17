@@ -9,13 +9,7 @@ const App = () => {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route
-          exact
-          path="/spells/:pcClass"
-          render={() => {
-            return <SpellSearch />;
-          }}
-        />
+        <Route exact path="/spells/:pcClass" component={SpellSearch} />
       </Switch>
     </div>
   );
