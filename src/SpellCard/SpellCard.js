@@ -23,21 +23,15 @@ const SpellCard = ({ spell }) => {
       <div>
         <h3 className="card-spell-name">{name}</h3>
         <div className="solo-card-details">
-          {level === 0 && <p>Cantrip</p>}
-          {level > 0 && (
-            <p>
-              <b>Level</b> {level}
-            </p>
-          )}
-          <p>{school.name}</p>
-          <p>
-            <b>Casting Time</b> {casting_time}
-          </p>
-          <p>
-            <b>Range</b> {range}
-          </p>
+          {level === 0 && <h4>Cantrip</h4>}
+          {level > 0 && <h4>Level {level}</h4>}
+          <h4>{school.name}</h4>
+          <h4>Casting: {casting_time}</h4>
+          <h4>Range: {range}</h4>
           {damage && (
-            <div>{damage.damage_type && <p>{damage.damage_type.name}</p>}</div>
+            <div>
+              {damage.damage_type && <h4>({damage.damage_type.name})</h4>}
+            </div>
           )}
         </div>
       </div>

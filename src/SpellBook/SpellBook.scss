@@ -16,6 +16,7 @@
 .spellbook-wrapper {
   padding: 2em;
   width: 65%;
+  cursor: pointer;
 }
 
 .page {
@@ -32,7 +33,6 @@
 }
 
 .no-scrolls-warning {
-  border: 2px $bronze solid;
   text-align: center;
   width: 35%;
   padding: 3em;
