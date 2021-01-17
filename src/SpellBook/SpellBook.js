@@ -1,9 +1,12 @@
 import './SpellBook.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import SpellDetails from '../SpellDetails/SpellDetails';
+import * as API from '../APIcalls';
 
-const SpellBook = ({ spellBook }) => {
+const SpellBook = () => {
+  const [spellBook, setSpellBook] = useState([]);
+
   const createSpellPage = () => {
     return spellBook.map((spell) => {
       return (
@@ -17,6 +20,29 @@ const SpellBook = ({ spellBook }) => {
       );
     });
   };
+
+  const sortSpells = (spells) => {
+    return spells.sort(
+      (orderedSpell, spell) => orderedSpell.level - spell.level
+    );
+  };
+
+  const loadSpellBookSpells = () => {
+    let spellBookSpells = [];
+    Object.values(localStorage).forEach((spell) =>
+      API.fetchSpellDetails(spell).then((data) => {
+        spellBookSpells.push(data);
+        if (localStorage.length === spellBookSpells.length) {
+          setSpellBook(sortSpells(spellBookSpells));
+        }
+      })
+    );
+  };
+
+  useEffect(() => {
+    loadSpellBookSpells();
+  }, []);
+
   if (!spellBook.length) {
     return (
       <section className="warning-wrapper">
