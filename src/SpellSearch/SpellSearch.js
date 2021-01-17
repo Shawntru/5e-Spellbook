@@ -5,21 +5,50 @@ import { useEffect, useState } from 'react';
 import * as API from '../APIcalls';
 import SpellCard from '../SpellCard/SpellCard';
 import SpellDetails from '../SpellDetails/SpellDetails';
+import SpellBook from '../SpellBook/SpellBook';
 
 const SpellSearch = () => {
   const [spells, setSpells] = useState([]);
   const [spellDetails, setSpellDetails] = useState([]);
   const [displayedSpell, setDisplayedSpell] = useState(null);
+  const [spellBook, setSpellBook] = useState([]);
   const searchCriteria = useParams().pcClass;
 
-  const fetchListOfClassSpells = () => {
+  const fetchAllClassSpells = () => {
     API.fetchSpells(searchCriteria).then((data) => {
       setSpells(data.results);
     });
   };
 
-  const fetchClassSpellDetails = () => {
+  const sortSpells = (spells) => {
+    return spells.sort(
+      (orderedSpell, spell) => orderedSpell.level - spell.level
+    );
+  };
+
+  const loadSpellBookSpells = () => {
+    let spellBookSpells = [];
+    Object.values(localStorage).forEach((spell) =>
+      API.fetchSpellDetails(spell).then((data) => {
+        spellBookSpells.push(data);
+        if (localStorage.length === spellBookSpells.length) {
+          setSpellBook(sortSpells(spellBookSpells));
+        }
+      })
+    );
+  };
+
+  useEffect(() => {
+    if (searchCriteria === 'spellbook') {
+      loadSpellBookSpells();
+    } else {
+      fetchAllClassSpells();
+    }
+  }, []);
+
+  useEffect(() => {
     let returnedDetails = [];
+
     spells.forEach((spell) =>
       API.fetchSpellDetails(spell.index).then((data) => {
         returnedDetails.push(data);
@@ -28,7 +57,7 @@ const SpellSearch = () => {
         }
       })
     );
-  };
+  }, [spells]);
 
   const createSpellCard = (spell) => {
     return (
@@ -43,29 +72,25 @@ const SpellSearch = () => {
     );
   };
 
-  useEffect(() => {
-    fetchListOfClassSpells();
-  }, []);
-
-  useEffect(() => {
-    fetchClassSpellDetails();
-  }, [spells]);
-
-  return (
-    <section className="search-wrapper">
-      <div className="all-spell-wrapper">
-        {spellDetails && (
-          <div className="spell-cards-wrapper">
-            <h1 className="search-criteria-title">
-              Spell Scrolls for{' '}
-              {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)}
-            </h1>
-            {spellDetails.map((spell) => createSpellCard(spell))}{' '}
-          </div>
-        )}
-        <div className="spell-details-wrapper">
-          {displayedSpell && (
-            <SpellDetails spell={displayedSpell} view="scroll" />
+  if (searchCriteria === 'spellbook') {
+    return (
+      <section>
+        <SpellBook spellBook={spellBook} />
+      </section>
+    );
+  } else {
+    return (
+      <section className="search-wrapper">
+        <div className="all-spell-wrapper">
+          {spellDetails && (
+            <div className="spell-cards-wrapper">
+              <h1 className="search-criteria-title">
+                Spell Scrolls for{' '}
+                {searchCriteria.charAt(0).toUpperCase() +
+                  searchCriteria.slice(1)}
+              </h1>
+              {spellDetails.map((spell) => createSpellCard(spell))}{' '}
+            </div>
           )}
           <div className="spell-details-wrapper">
             {displayedSpell && (
@@ -73,9 +98,9 @@ const SpellSearch = () => {
             )}
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 };
 
 export default SpellSearch;
