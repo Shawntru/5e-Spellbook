@@ -29,7 +29,7 @@ const Homepage = () => {
       <h1>The Dusty Tome</h1>
       <div>{pcClasses.map((pcClass) => createPcClassLink(pcClass))}</div>
       <div>
-        <Link to={'/spells/spellbook'}>My Spell Book</Link>
+        <Link to={'/spellbook'}>My Spell Book</Link>
       </div>
     </section>
   );
