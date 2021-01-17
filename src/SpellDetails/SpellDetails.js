@@ -32,34 +32,38 @@ const SpellDetails = ({ spell }) => {
 
   return (
     <section className="spell-details-internal-wrapper">
-      <h1>{name}</h1>
-      {level === 0 && <p>Cantrip</p>}
-      {level > 0 && <p>Level {level}</p>}
-      {school && <p>{school.name}</p>}
+      <h2 className="spell-detail-title">{name}</h2>
+      <div className="same-group">
+        <div className="same-level">
+          {level === 0 && <h4>Cantrip - </h4>}
+          {level > 0 && <h4>Level {level} - </h4>}
+          {school && <h4>{school.name}</h4>}
+        </div>
+        <div className="same-level">
+          {ritual && <h3>R</h3>}
+          {ritual && concentration && <h4>- </h4>}
+          {concentration && <h3>C</h3>}
+        </div>
+      </div>
+      <div className="same-group">
+        <div className="same-level">
+          <h4>Range: {range}</h4>
+          {area_of_effect && (
+            <h4>
+              ({area_of_effect.size} ft {area_of_effect.type})
+            </h4>
+          )}
+        </div>
+        <h4>{components}</h4>
+      </div>
+      <h4>Duration: {duration}</h4>
+      {material && <p>Materials: {material}</p>}
       {classes && <p>{showReleventClasses(classes)}</p>}
       {desc && <p>{desc.join(' ')}</p>}
-      <div>
-        <h4>Range:</h4> <p>{range}</p>
-        {area_of_effect && (
-          <p>
-            ({area_of_effect.size} ft {area_of_effect.type})
-          </p>
-        )}
-      </div>
-      <div>
-        <h4>Components:</h4> <p>{components}</p>
-      </div>
-      <p>{material}</p>
-      {ritual && <p>Ritual</p>}
-      <div>
-        <h4>Duration:</h4> <p>{duration}</p>
-      </div>
-      {concentration && <p>Concentration</p>}
-      <p>{casting_time}</p>
-      {higher_level && <p>{higher_level.join(' ')}</p>}
+      {higher_level && <p>At Higher Levels: {higher_level.join(' ')}</p>}
       {damage && (
         <div>
-          <p>{damage.damage_type.name}</p>
+          <p>Damage Type: {damage.damage_type.name}</p>
           {damage.damage_at_slot_level && (
             <p>
               (Quick reference: Level{' '}

@@ -8,3 +8,18 @@
   background-position: center;
   background-size: 100% 100%;
 }
+
+.spell-detail-title {
+  text-align: center;
+  border-bottom: black 1px solid;
+}
+
+.same-level {
+  display: flex;
+}
+
+.same-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

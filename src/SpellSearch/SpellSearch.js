@@ -77,7 +77,9 @@ const SpellSearch = () => {
 
   if (searchCriteria === 'spellbook') {
     return (
-      <section>{spellBook && <SpellBook spellBook={spellBook} />}</section>
+      <section>
+        {spellBook.length > 0 && <SpellBook spellBook={spellBook} />}
+      </section>
       // <section className="search-wrapper">
       //   <h1>My Spell Book</h1>
       //   <div className="all-spell-wrapper">
