@@ -1,22 +1,28 @@
 import './SpellCard.scss';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import plusIcon from '../assets/plus-icon.png';
 import minusIcon from '../assets/minus-icon.png';
 
 const SpellCard = ({ spell }) => {
+  const [icon, setIcon] = useState(null);
   const { name, level, school, casting_time, range } = spell;
 
   const modifySpellBook = (spell) => {
     Object.values(localStorage).includes(spell.index)
       ? localStorage.removeItem(`spell-book-${spell.index}`, spell.index)
       : localStorage.setItem(`spell-book-${spell.index}`, spell.index);
+    selectIcon();
   };
 
   const selectIcon = () => {
     return Object.values(localStorage).includes(spell.index)
-      ? minusIcon
-      : plusIcon;
+      ? setIcon(minusIcon)
+      : setIcon(plusIcon);
   };
+
+  useEffect(() => {
+    selectIcon();
+  });
 
   return (
     <section className="solo-card-wrapper">
@@ -30,12 +36,14 @@ const SpellCard = ({ spell }) => {
           <h4>Range: {range}</h4>
         </div>
       </div>
-      <img
-        src={selectIcon()}
-        alt="add/remove button"
-        className="plus-minus-icon"
-        onClick={() => modifySpellBook(spell)}
-      />{' '}
+      {icon && (
+        <img
+          onClick={() => modifySpellBook(spell)}
+          src={icon}
+          alt="add/remove button"
+          className="plus-minus-icon"
+        />
+      )}
     </section>
   );
 };
