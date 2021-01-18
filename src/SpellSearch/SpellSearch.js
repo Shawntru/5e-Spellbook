@@ -57,7 +57,8 @@ const SpellSearch = () => {
         <div className="search-results-wrapper">
           <h1 className="search-criteria-title">
             Spell Scrolls for{' '}
-            {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)}
+            {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)} (
+            {spellDetails.length} Spells)
           </h1>
           <div className="spell-cards-wrapper">
             {spellDetails.map((spell) => createSpellCard(spell))}{' '}
@@ -67,6 +68,14 @@ const SpellSearch = () => {
       <div className="spell-details-wrapper">
         {displayedSpell && (
           <SpellDetails spell={displayedSpell} view="scroll" />
+        )}
+        {!displayedSpell && spellDetails && (
+          <div className="click-message">
+            <h1>
+              Click a spell scroll on the left to open it. Use the " + / - " to
+              add or remove a spell from your Spell Book.{' '}
+            </h1>
+          </div>
         )}
       </div>
     </section>
