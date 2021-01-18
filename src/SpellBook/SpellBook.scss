@@ -3,20 +3,55 @@
 .spell-book-view-wrapper {
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/writing-desk.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  background-size: cover;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
 .spellbook-wrapper {
-  padding: 2em;
-  width: 65%;
+  padding: 4em;
+  width: 70%;
   cursor: pointer;
+}
+
+.spellbook-index-wrapper {
+  width: 30%;
+  // height: 80%;
+  overflow: scroll;
+  // margin: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: floralwhite;
+}
+
+.spellbook-index-wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.spellbook-index-wrapper::-webkit-scrollbar {
+  width: 10px !important;
+  background-color: transparent;
+}
+
+.spellbook-index-wrapper::-webkit-scrollbar-thumb {
+  background: radial-gradient(
+    circle,
+    rgba(175, 138, 104, 1) 3%,
+    rgba(113, 75, 1, 1) 76%
+  );
+  border-radius: 10px;
+  border: #332200 1px solid;
+}
+
+.spell-index-title {
+  border-bottom: $bronze 2px solid;
+  width: 65%;
+  margin: 1em;
+  text-align: center;
 }
 
 .page {
