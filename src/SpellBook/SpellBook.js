@@ -6,20 +6,8 @@ import * as API from '../APIcalls';
 
 const SpellBook = () => {
   const [spellBook, setSpellBook] = useState([]);
-
-  const createSpellPage = () => {
-    return spellBook.map((spell) => {
-      return (
-        <div
-          number={spellBook.indexOf(spell) + 1}
-          className="page"
-          key={spellBook.index}
-        >
-          <SpellDetails spell={spell} />
-        </div>
-      );
-    });
-  };
+  const [page, setPage] = useState(0);
+  const [totalPage, setTotalPage] = useState(0);
 
   const sortSpells = (spells) => {
     return spells.sort(
@@ -37,6 +25,33 @@ const SpellBook = () => {
         }
       })
     );
+  };
+
+  const createSpellBookIndex = () => {
+    return spellBook.map((spell) => {
+      return (
+        <div>
+          <h4>
+            [{spell.level > 0 && spell.level}
+            {spell.level === 0 && 'C'}] {spell.name}
+          </h4>
+        </div>
+      );
+    });
+  };
+
+  const createSpellPages = () => {
+    return spellBook.map((spell) => {
+      return (
+        <div
+          className="page"
+          key={spellBook.index}
+          number={spellBook.indexOf(spell) + 1}
+        >
+          <SpellDetails spell={spell} />
+        </div>
+      );
+    });
   };
 
   useEffect(() => {
@@ -57,6 +72,10 @@ const SpellBook = () => {
   } else {
     return (
       <section className="spell-book-view-wrapper">
+        <div className="spellbook-index-wrapper">
+          <h2 className="spell-index-title">Spell Index</h2>
+          <div>{createSpellBookIndex()}</div>
+        </div>
         <div className="spellbook-wrapper">
           <HTMLFlipBook
             width={550}
@@ -70,7 +89,7 @@ const SpellBook = () => {
             showCover={true}
           >
             <div className="book-cover" number={0}></div>
-            {createSpellPage()}
+            {createSpellPages()}
             <div className="page" number={0}></div>
           </HTMLFlipBook>
         </div>
