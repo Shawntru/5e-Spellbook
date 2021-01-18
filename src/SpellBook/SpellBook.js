@@ -6,8 +6,6 @@ import * as API from '../APIcalls';
 
 const SpellBook = () => {
   const [spellBook, setSpellBook] = useState([]);
-  const [page, setPage] = useState(0);
-  const [totalPage, setTotalPage] = useState(0);
 
   const sortSpells = (spells) => {
     return spells.sort(
@@ -30,7 +28,7 @@ const SpellBook = () => {
   const createSpellBookIndex = () => {
     return spellBook.map((spell) => {
       return (
-        <div>
+        <div key={spell.index}>
           <h4>
             [{spell.level > 0 && spell.level}
             {spell.level === 0 && 'C'}] {spell.name}
@@ -45,7 +43,7 @@ const SpellBook = () => {
       return (
         <div
           className="page"
-          key={spellBook.index}
+          key={spell.index}
           number={spellBook.indexOf(spell) + 1}
         >
           <SpellDetails spell={spell} />

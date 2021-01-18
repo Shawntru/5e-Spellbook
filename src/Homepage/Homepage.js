@@ -30,7 +30,7 @@ const Homepage = () => {
 
   return (
     <section className="homepage-wrapper">
-      <h1 className="homepage-header">Search for Spells by Class:</h1>
+      <h3 className="homepage-header">Search for Spells by Class:</h3>
       <div className="all-classes-wrapper">
         {pcClasses.map((pcClass) => createPcClassLink(pcClass))}{' '}
         <Link className="class-card-wrapper" to={'/spellbook'}>
