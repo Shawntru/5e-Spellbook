@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Nav from './Nav';
 
 describe('Nav', () => {
-  it('should render the Nav component', () => {
+  it('should render a spell name', () => {
     render(
       <MemoryRouter>
         <Nav />
