@@ -1,6 +1,7 @@
 @import '../variables';
 
 .spell-details-internal-wrapper {
+  height: 80%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -27,7 +28,7 @@
 
 .desc-wrapper {
   overflow-y: scroll;
-  max-height: 18em;
+  max-height: 30%;
 }
 
 .desc-wrapper::-webkit-scrollbar {
