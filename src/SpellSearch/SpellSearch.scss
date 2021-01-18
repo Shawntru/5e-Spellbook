@@ -11,7 +11,7 @@
 .spell-cards-wrapper {
   width: 100%;
   margin: 1em;
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -38,6 +38,7 @@
 
 .all-spell-wrapper {
   width: 100%;
+  height: 90vh;
   display: flex;
   justify-content: center;
 }
