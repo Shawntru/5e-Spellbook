@@ -1,11 +1,41 @@
 @import '../variables.scss';
 
 .nav-bar-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
+.site-title {
+  color: floralwhite;
+  text-shadow: $bronze 2px 2px 10px;
+}
+
+.nav-underline-wrapper {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $bronze;
+  opacity: 0.75;
+}
+
 .nav-link {
-  border: 2px $bronze solid;
   margin: 0.1em 2em;
+  text-decoration: none;
+  color: $bronze;
+}
+
+.gold-left {
+  width: 10em;
+  background-image: url('../assets/gold-lace.png');
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.gold-right {
+  @extend .gold-left;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
