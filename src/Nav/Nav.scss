@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  border: 2px $bronze solid;
+  margin: 0.1em 2em;
+}
