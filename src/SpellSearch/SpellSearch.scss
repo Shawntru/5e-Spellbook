@@ -4,11 +4,16 @@
   width: 100%;
 }
 
-.spell-cards-wrapper {
+.search-results-wrapper {
   width: 40%;
-  padding: 1em;
-  height: 100vh;
+}
+
+.spell-cards-wrapper {
+  width: 100%;
+  margin: 1em;
+  height: 90vh;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .spell-cards-wrapper::-webkit-scrollbar {
@@ -28,7 +33,7 @@
 .all-spell-wrapper {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .spell-details-wrapper {

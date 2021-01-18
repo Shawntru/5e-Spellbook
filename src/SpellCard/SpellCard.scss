@@ -3,7 +3,7 @@
 .solo-card-wrapper {
   border: $bronze 1px solid;
   width: 100%;
-  margin: 1em 0;
+  margin: 0.25em 0;
   color: black;
   background: rgba(255, 250, 240, 0.65);
   cursor: pointer;
@@ -15,7 +15,7 @@
 }
 
 .card-spell-name {
-  width: 50%;
+  width: 70%;
   margin: 1em 0 0 1em;
   border-bottom: black 1px solid;
 }
