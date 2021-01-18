@@ -9,16 +9,15 @@
 }
 
 .spellbook-wrapper {
-  padding: 4em;
-  width: 70%;
+  padding: 3em;
+  width: 60%;
   cursor: pointer;
 }
 
 .spellbook-index-wrapper {
-  width: 30%;
-  // height: 80%;
+  width: 20%;
+  height: 90%;
   overflow: scroll;
-  // margin: 3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
