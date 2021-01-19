@@ -20,6 +20,7 @@ const Homepage = () => {
         to={`/spells/${pcClass}`}
         key={pcClass}
         className="class-card-wrapper"
+        data-testid={`${pcClass}-card-test`}
       >
         <div className="leather-background">
           <h1>{pcClass.charAt(0).toUpperCase() + pcClass.slice(1)}</h1>
@@ -29,7 +30,7 @@ const Homepage = () => {
   };
 
   return (
-    <section className="homepage-wrapper">
+    <section className="homepage-wrapper" data-testid="homepage-test">
       <h3 className="homepage-header">Search for Spells by Class:</h3>
       <div className="all-classes-wrapper">
         {pcClasses.map((pcClass) => createPcClassLink(pcClass))}{' '}

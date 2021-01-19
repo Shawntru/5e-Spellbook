@@ -37,6 +37,7 @@ const SpellSearch = () => {
         onClick={() => {
           setDisplayedSpell(spell);
         }}
+        data-testid={`spellCard-${spell.index}`}
       >
         <SpellCard spell={spell} />
       </div>
@@ -44,22 +45,36 @@ const SpellSearch = () => {
   };
 
   useEffect(() => {
-    fetchListOfClassSpells();
+    let mounted = true;
+    if (mounted) {
+      fetchListOfClassSpells();
+    }
+    return function cleanUp() {
+      mounted = false;
+    };
   }, []);
 
   useEffect(() => {
-    fetchClassSpellDetails();
+    let mounted = true;
+    if (mounted) {
+      fetchClassSpellDetails();
+    }
+    return function cleanUp() {
+      mounted = false;
+    };
   }, [spells]);
 
   return (
-    <section className="all-spell-wrapper">
+    <section className="all-spell-wrapper" data-testid="search-test">
       {spellDetails && (
         <div className="search-results-wrapper">
-          <h1 className="search-criteria-title">
-            Spell Scrolls for{' '}
-            {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)} (
-            {spellDetails.length} Spells)
-          </h1>
+          {searchCriteria && (
+            <h1 className="search-criteria-title">
+              Spell Scrolls for{' '}
+              {searchCriteria.charAt(0).toUpperCase() + searchCriteria.slice(1)}{' '}
+              ({spellDetails.length} Spells)
+            </h1>
+          )}
           <div className="spell-cards-wrapper">
             {spellDetails.map((spell) => createSpellCard(spell))}{' '}
           </div>

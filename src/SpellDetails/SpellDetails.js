@@ -38,7 +38,11 @@ const SpellDetails = ({ spell, view }) => {
   }
 
   return (
-    <section className="spell-details-internal-wrapper" style={styling}>
+    <section
+      className="spell-details-internal-wrapper"
+      style={styling}
+      data-testid="details-test"
+    >
       <h2 className="spell-detail-title">{name}</h2>
       <div className="same-group">
         <div className="same-level">
