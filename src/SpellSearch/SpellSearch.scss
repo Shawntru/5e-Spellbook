@@ -8,6 +8,40 @@
   width: 40%;
 }
 
+.searching-message {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  color: $bronze;
+}
+
+.shadow {
+  height: 12px;
+  width: 70px;
+  background-color: black;
+  opacity: 0.25;
+  border-radius: 50%;
+  transform: skewX(20%);
+  display: inline-block;
+  animation: 2s ease shadow infinite;
+  margin-bottom: 2em;
+}
+
+.spellbook-icon {
+  margin: 1em;
+  height: 8em;
+  width: 10em;
+  background-image: url('../assets/spellbook.png');
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center;
+  background-size: 100% 100%;
+  animation: 2s ease loading infinite;
+}
+
 .spell-cards-wrapper {
   width: 100%;
   margin: 1em;
@@ -55,4 +89,16 @@
 .search-criteria-title {
   text-align: center;
   color: $bronze;
+}
+
+@keyframes loading {
+  50% {
+    transform: translateY(25px);
+  }
+}
+
+@keyframes shadow {
+  50% {
+    transform: scale(1.5);
+  }
 }
