@@ -66,6 +66,13 @@ const SpellSearch = () => {
 
   return (
     <section className="all-spell-wrapper" data-testid="search-test">
+      {!spellDetails && (
+        <section className="searching-message">
+          <div className="spellbook-icon"></div>
+          <span className="shadow"></span>
+          <h2>Searching for Scrolls...</h2>
+        </section>
+      )}
       {spellDetails && (
         <div className="search-results-wrapper">
           {searchCriteria && (
@@ -80,19 +87,21 @@ const SpellSearch = () => {
           </div>
         </div>
       )}
-      <div className="spell-details-wrapper">
-        {displayedSpell && (
-          <SpellDetails spell={displayedSpell} view="scroll" />
-        )}
-        {!displayedSpell && spellDetails && (
-          <div className="click-message">
-            <h1>
-              Click a spell scroll on the left to open it. Use the " + / - " to
-              add or remove a spell from your Spell Book.{' '}
-            </h1>
-          </div>
-        )}
-      </div>
+      {spellDetails && (
+        <div className="spell-details-wrapper">
+          {displayedSpell && (
+            <SpellDetails spell={displayedSpell} view="scroll" />
+          )}
+          {!displayedSpell && (
+            <div className="click-message">
+              <h1>
+                Click a spell scroll on the left to open it. Use the " + / - "
+                to add or remove a spell from your Spell Book.{' '}
+              </h1>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 };
