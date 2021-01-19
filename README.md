@@ -51,6 +51,7 @@ This application was created as part of a mod 3 challenge project in the Turing 
 ## Screenshots
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68252181/104982795-a3b7e000-59c8-11eb-9b3b-5b7e5ac761e2.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/68252181/105083773-9fd0a000-5a52-11eb-9c02-6780a195c481.gif)
 <img width="600" alt="Screen Shot 2021-01-18 at 8 07 16 PM" src="https://user-images.githubusercontent.com/68252181/104982882-d366e800-59c8-11eb-8564-1ac8349a95fe.png">
 
 
