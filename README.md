@@ -56,7 +56,7 @@ This application was created as part of a mod 3 challenge project in the Turing 
 
 - Realizing entire project scope within 5 days, including creating a robust testing suite
 - Interactive Styling
-- Creating a fast and responsive utilizing React
+- Creating a fast and responsive app utilizing React
 
 ## Screenshots
 
