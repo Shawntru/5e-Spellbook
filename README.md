@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# The Dusty Tome - Turing Mod 3 Solo Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A customizable Spell Book for Dungeons & Dragons 5th Edition. Lookup spell scrolls by class and copy them into your own personal Spell Book!
 
-## Available Scripts
+### [The Dusty Tome App]()
 
-In the project directory, you can run:
+### [Link to the Repo](https://github.com/Shawntru/5e-Spellbook)
 
-### `npm start`
+#### [Project Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/68252181/104980901-dbbd2400-59c4-11eb-9e19-8e4cea98827b.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Project Overview](#project-overview)
+- [Technologies and Tools](#technologies-and-tools)
+- [Challenges](#challenges)
+- [Wins](#wins)
+- [Screenshots](#screenshots)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Overview
 
-### `npm run build`
+The Dusty Tome is a customizable spell search and spell book creator for Dungeons and Dragons 5th Edition. Search for spells available to the Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, or Wizard classes. View each spell's details and add them to your own personal Spell Book. All spell scrolls added to your spell book can then be viewed in your own dusty leather-bound tome for easy lookup in game!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This application was created as part of a mod 3 challenge project in the Turing Front End Engineering course. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies and Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- JavaScript (ES6)
+- CSS/Scss/Sass
+- React
+- Router
+- JSX
+- Jest
+- PropTypes
+- StPageFlip [Github Repo](https://github.com/Nodlik/react-pageflip)
 
-### `npm run eject`
+## Challenges
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Integration of new component wrapper StPageFlip
+- Automatic state update for spell displays, whether or not they were inside localStorage
+- Realizing entire project scope within 5 days, including creating a robust testing suite
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Wins
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Interactive Styling
+- Creating a fast and responsive utilizing React
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68252181/104982795-a3b7e000-59c8-11eb-9b3b-5b7e5ac761e2.gif)
+<img width="600" alt="Screen Shot 2021-01-18 at 8 07 16 PM" src="https://user-images.githubusercontent.com/68252181/104982882-d366e800-59c8-11eb-8564-1ac8349a95fe.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Roadmap
 
-### Code Splitting
+Several features planned for the future include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Sorting by spell level in the Spell Search view
+- One click navigation from the spell index in the Spell Book view
+- Removing spells from Spell Book through the index
 
-### Analyzing the Bundle Size
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="https://avatars2.githubusercontent.com/u/68252181?s=460&u=0e706c67d754b36a877dbbc3d7750b32e1e06454&v=4" alt="Shawn Truesdale"
+ width="150" height="auto" />
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Shawn Truesdale**
+[GitHub Profile](https://github.com/Shawntru)
