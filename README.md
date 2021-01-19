@@ -12,6 +12,7 @@
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Installation](#installation)
 - [Technologies and Tools](#technologies-and-tools)
 - [Challenges](#challenges)
 - [Wins](#wins)
@@ -24,6 +25,16 @@
 The Dusty Tome is a customizable spell search and spell book creator for Dungeons and Dragons 5th Edition. Search for spells available to the Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, or Wizard classes. View each spell's details and add them to your own personal Spell Book. All spell scrolls added to your spell book can then be viewed in your own dusty leather-bound tome for easy lookup in game!
 
 This application was created as part of a mod 3 challenge project in the Turing Front End Engineering course. 
+
+## Installation
+
+> Clone down the repo `$ git clone git@github.com:Shawntru/5e-Spellbook.git`
+>
+> Navigate to directory `$ cd 5e-spellbook/`
+>
+> Install dependencies `$ npm i`
+>
+> Start the application `$ npm start`
 
 ## Technologies and Tools
 
