@@ -51,10 +51,10 @@ This application was created as part of a mod 3 challenge project in the Turing 
 
 - Integration of new component wrapper StPageFlip
 - Automatic state update for spell displays, whether or not they were inside localStorage
-- Realizing entire project scope within 5 days, including creating a robust testing suite
 
 ## Wins
 
+- Realizing entire project scope within 5 days, including creating a robust testing suite
 - Interactive Styling
 - Creating a fast and responsive utilizing React
 
