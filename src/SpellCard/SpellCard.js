@@ -2,6 +2,7 @@ import './SpellCard.scss';
 import React, { useState, useEffect } from 'react';
 import plusIcon from '../assets/plus-icon.png';
 import minusIcon from '../assets/minus-icon.png';
+import PropTypes from 'prop-types';
 
 const SpellCard = ({ spell }) => {
   const [icon, setIcon] = useState(null);
@@ -49,3 +50,11 @@ const SpellCard = ({ spell }) => {
 };
 
 export default SpellCard;
+
+SpellCard.propTypes = {
+  name: PropTypes.string,
+  range: PropTypes.string,
+  casting_time: PropTypes.string,
+  level: PropTypes.number,
+  school: PropTypes.object,
+};

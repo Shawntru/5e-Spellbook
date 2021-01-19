@@ -1,6 +1,7 @@
 import './SpellDetails.scss';
 import React from 'react';
 import scrollImg from '../assets/scroll-backdrop.png';
+import PropTypes from 'prop-types';
 
 const SpellDetails = ({ spell, view }) => {
   const {
@@ -80,3 +81,21 @@ const SpellDetails = ({ spell, view }) => {
 };
 
 export default SpellDetails;
+
+SpellDetails.propTypes = {
+  index: PropTypes.string,
+  name: PropTypes.string,
+  desc: PropTypes.array,
+  higher_level: PropTypes.array,
+  range: PropTypes.string,
+  components: PropTypes.array,
+  ritual: PropTypes.bool,
+  duration: PropTypes.string,
+  concentration: PropTypes.bool,
+  casting_time: PropTypes.string,
+  level: PropTypes.number,
+  area_of_effect: PropTypes.object,
+  school: PropTypes.object,
+  classes: PropTypes.array,
+  view: PropTypes.string,
+};
