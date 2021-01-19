@@ -97,4 +97,5 @@ SpellDetails.propTypes = {
   area_of_effect: PropTypes.object,
   school: PropTypes.object,
   classes: PropTypes.array,
+  view: PropTypes.string,
 };
