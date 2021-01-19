@@ -45,11 +45,23 @@ const SpellSearch = () => {
   };
 
   useEffect(() => {
-    fetchListOfClassSpells();
+    let mounted = true;
+    if (mounted) {
+      fetchListOfClassSpells();
+    }
+    return function cleanUp() {
+      mounted = false;
+    };
   }, []);
 
   useEffect(() => {
-    fetchClassSpellDetails();
+    let mounted = true;
+    if (mounted) {
+      fetchClassSpellDetails();
+    }
+    return function cleanUp() {
+      mounted = false;
+    };
   }, [spells]);
 
   return (

@@ -58,7 +58,7 @@ const SpellBook = () => {
   }, []);
 
   return (
-    <>
+    <section data-testid="spellbook-test">
       {!spellBook.length && (
         <section className="warning-wrapper">
           <div className="no-scrolls-warning">
@@ -94,7 +94,7 @@ const SpellBook = () => {
           </div>
         </section>
       )}
-    </>
+    </section>
   );
 };
 
