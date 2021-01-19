@@ -15,6 +15,7 @@ const SpellBook = () => {
 
   const loadSpellBookSpells = () => {
     let spellBookSpells = [];
+    // console.log(localStorage);
     Object.values(localStorage).forEach((spell) =>
       API.fetchSpellDetails(spell).then((data) => {
         spellBookSpells.push(data);
@@ -56,44 +57,45 @@ const SpellBook = () => {
     loadSpellBookSpells();
   }, []);
 
-  if (!spellBook.length) {
-    return (
-      <section className="warning-wrapper">
-        <div className="no-scrolls-warning">
-          <h1>
-            No scrolls collected yet. Go find some scrolls and add them to your
-            Spell Book!
-          </h1>
-        </div>
-      </section>
-    );
-  } else {
-    return (
-      <section className="spell-book-view-wrapper">
-        <div className="spellbook-index-wrapper">
-          <h2 className="spell-index-title">Spell Index</h2>
-          <div>{createSpellBookIndex()}</div>
-        </div>
-        <div className="spellbook-wrapper">
-          <HTMLFlipBook
-            width={550}
-            height={733}
-            size="stretch"
-            minWidth={315}
-            maxWidth={1000}
-            minHeight={400}
-            maxHeight={1533}
-            maxShadowOpacity={0.5}
-            showCover={true}
-          >
-            <div className="book-cover" number={0}></div>
-            {createSpellPages()}
-            <div className="page" number={0}></div>
-          </HTMLFlipBook>
-        </div>
-      </section>
-    );
-  }
+  return (
+    <>
+      {!spellBook.length && (
+        <section className="warning-wrapper">
+          <div className="no-scrolls-warning">
+            <h1>
+              No scrolls collected yet. Go find some scrolls and add them to
+              your Spell Book!
+            </h1>
+          </div>
+        </section>
+      )}
+      {spellBook.length && (
+        <section className="spell-book-view-wrapper">
+          <div className="spellbook-index-wrapper">
+            <h2 className="spell-index-title">Spell Index</h2>
+            <div>{createSpellBookIndex()}</div>
+          </div>
+          <div className="spellbook-wrapper">
+            <HTMLFlipBook
+              width={550}
+              height={733}
+              size="stretch"
+              minWidth={315}
+              maxWidth={1000}
+              minHeight={400}
+              maxHeight={1533}
+              maxShadowOpacity={0.5}
+              showCover={true}
+            >
+              <div className="book-cover" number={0}></div>
+              {createSpellPages()}
+              <div className="page" number={0}></div>
+            </HTMLFlipBook>
+          </div>
+        </section>
+      )}
+    </>
+  );
 };
 
 export default SpellBook;
