@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './SpellBook.scss';
 import React, { useEffect, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';

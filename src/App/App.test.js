@@ -83,4 +83,49 @@ describe('Homepage navigation interaction', () => {
       expect(screen.getByTestId('search-test')).toBeInTheDocument();
     });
   });
+
+  it('should navigate to the spell book view when Go To Spellbook is clicked on', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    userEvent.click(screen.getByText('Go To Spell Book'));
+
+    await waitFor(() => {
+      expect(screen.getByTestId('spellbook-test')).toBeInTheDocument();
+    });
+  });
+});
+
+describe('NavBar integration testing', () => {
+  it('should navigate home when Slecet a Class is clicked on', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    userEvent.click(screen.getByText('Go To Spell Book'));
+    userEvent.click(screen.getByText('Select a Class'));
+
+    await waitFor(() => {
+      expect(screen.getByTestId('homepage-test')).toBeInTheDocument();
+    });
+  });
+
+  it('should navigate to the spell book view when Your Spell Book is clicked on', async () => {
+    render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    userEvent.click(screen.getByText('Your Spell Book'));
+
+    await waitFor(() => {
+      expect(screen.getByTestId('spellbook-test')).toBeInTheDocument();
+    });
+  });
 });

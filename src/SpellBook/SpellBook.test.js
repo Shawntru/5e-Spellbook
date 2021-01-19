@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 import SpellBook from './SpellBook';
@@ -16,6 +16,15 @@ describe('SpellBook', () => {
     data: { spell: 'burning-hands' },
   };
 
+  it('should render the Spellbook component', () => {
+    render(
+      <MemoryRouter>
+        <SpellBook />
+      </MemoryRouter>
+    );
+    expect(screen.getByTestId('spellbook-test')).toBeInTheDocument();
+  });
+
   it('should render the Spellbook warning with no scrolls added', () => {
     render(
       <MemoryRouter>
@@ -28,16 +37,4 @@ describe('SpellBook', () => {
       )
     ).toBeInTheDocument();
   });
-
-  // it('should display local storage items as book pages', async () => {
-  //   render(
-  //     <MemoryRouter>
-  //       <SpellBook />
-  //     </MemoryRouter>
-  //   );
-
-  //   await waitFor(() => {
-  //     expect(screen.getByText('Burning Hands')).toBeInTheDocument();
-  //   });
-  // });
 });
