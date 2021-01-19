@@ -2,7 +2,6 @@
 
 > A customizable Spell Book for Dungeons & Dragons 5th Edition. Lookup spell scrolls by class and copy them into your own personal Spell Book!
 
-### [The Dusty Tome App]()
 
 ### [Link to the Repo](https://github.com/Shawntru/5e-Spellbook)
 
