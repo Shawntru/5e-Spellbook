@@ -45,6 +45,7 @@ This application was created as part of a mod 3 challenge project in the Turing 
 - JSX
 - Jest
 - PropTypes
+- The 5th Edition Dungeons and Dragons API [Link](http://www.dnd5eapi.co/)
 - StPageFlip [Github Repo](https://github.com/Nodlik/react-pageflip)
 
 ## Challenges
