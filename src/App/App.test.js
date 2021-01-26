@@ -26,7 +26,7 @@ describe('App', () => {
 
   it('should handle path to main page', async () => {
     const history = createMemoryHistory();
-    history.push('/');
+    history.push('/5e-spellbook');
     render(
       <Router history={history}>
         <App />
@@ -71,10 +71,13 @@ describe('App', () => {
 
 describe('Homepage navigation interaction', () => {
   it('should navigate to the spell search view when a class is clicked on', async () => {
+    const history = createMemoryHistory();
+    history.push('/5e-spellbook');
+
     render(
-      <MemoryRouter>
+      <Router history={history}>
         <App />
-      </MemoryRouter>
+      </Router>
     );
 
     userEvent.click(screen.getByText('Bard'));
@@ -85,10 +88,13 @@ describe('Homepage navigation interaction', () => {
   });
 
   it('should navigate to the spell book view when Go To Spellbook is clicked on', async () => {
+    const history = createMemoryHistory();
+    history.push('/5e-spellbook');
+
     render(
-      <MemoryRouter>
+      <Router history={history}>
         <App />
-      </MemoryRouter>
+      </Router>
     );
 
     userEvent.click(screen.getByText('Go To Spell Book'));
@@ -101,10 +107,13 @@ describe('Homepage navigation interaction', () => {
 
 describe('NavBar integration testing', () => {
   it('should navigate home when Slecet a Class is clicked on', async () => {
+    const history = createMemoryHistory();
+    history.push('/5e-spellbook');
+
     render(
-      <MemoryRouter>
+      <Router history={history}>
         <App />
-      </MemoryRouter>
+      </Router>
     );
 
     userEvent.click(screen.getByText('Go To Spell Book'));
@@ -116,10 +125,13 @@ describe('NavBar integration testing', () => {
   });
 
   it('should navigate to the spell book view when Your Spell Book is clicked on', async () => {
+    const history = createMemoryHistory();
+    history.push('/5e-spellbook');
+
     render(
-      <MemoryRouter>
+      <Router history={history}>
         <App />
-      </MemoryRouter>
+      </Router>
     );
 
     userEvent.click(screen.getByText('Your Spell Book'));
