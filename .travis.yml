@@ -1,8 +1,11 @@
 language: node_js
 node_js:
-- node
+  - node
 notifications:
   email: false
 deploy:
+  provider: heroku
   api_key:
     secure: Y+TIPATcCz2QxCyYQjNpB+ylqktmk/I0ZaHNd/i5wBNHmkcXOg3Uyu24c/9YbHrGwRcBxaUxTKwbSGPP5oaInuO3F2DTcpBMmQ8dQccx6OI1e5B6WK0L3tK/+WWtGJ+HyAxN5w8eyX8Xe5CImSEhXRbAnE4Q6BNfVqEIsSdQvAQN33LUljYOrP+iR86lyPJoT//d0ULP+bvNaO7f3RGTTYuJQZpWyoahd7CO1oIy4prwhW+7nLmusXjoXfS4hvwppX+bQpy9JnM26R/jhBk+iRHb5NXPETRmbUPEBHuTC2T/WBGer1qEhpMyRo79qOARkKIScxBq2mjEwRj5Iuadpnm+BSU0cie7XTxE1gYO1V1dXUDVdrEtxGkIfSaGKv9lfUnLyP8C6T9S4p972K1uuSWqp8TZCDN5D9PF8ao9nuyx31ffvXiO8C8ty8zsjgPVVDsYFDdWZ144pBw24o8/fYq/Jwc+K6CROSGPgKsCOMsLtpo6OtXYt31cvHJd1j3CyFjmQjlXY647mip+N+LW3FaQ//9Xh00Iu6Ey+Bj0pQCPm4t5bRPG1GDyIKocBU4D8kU7FQf2sb+B+xXZB0QeYcc5rDYYzqYs2ytjeK0gTn/RIn00caSLa7aFIkq+x7/NfhAOrIpBOWdyZbPYn6n/WFnkPEQVVGhwe1Bz+yp92Xc=
+  app: the-dusty-tome
+  skip_cleanup: true
