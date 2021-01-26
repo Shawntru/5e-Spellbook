@@ -2,7 +2,6 @@
 
 > A customizable Spell Book for Dungeons & Dragons 5th Edition. Lookup spell scrolls by class and copy them into your own personal Spell Book!
 
-
 ### [Link to the Repo](https://github.com/Shawntru/5e-Spellbook)
 
 #### [Project Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
@@ -24,7 +23,7 @@
 
 The Dusty Tome is a customizable spell search and spell book creator for Dungeons and Dragons 5th Edition. Search for spells available to the Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Warlock, or Wizard classes. View each spell's details and add them to your own personal Spell Book. All spell scrolls added to your spell book can then be viewed in your own dusty leather-bound tome for easy lookup in game!
 
-This application was created as part of a mod 3 challenge project in the Turing Front End Engineering course. 
+This application was created as part of a mod 3 challenge project in the Turing Front End Engineering course.
 
 ## Installation
 
@@ -47,6 +46,8 @@ This application was created as part of a mod 3 challenge project in the Turing 
 - PropTypes
 - The 5th Edition Dungeons and Dragons API [Link](http://www.dnd5eapi.co/)
 - StPageFlip [Github Repo](https://github.com/Nodlik/react-pageflip)
+- Travis CI
+- Heroku
 
 ## Challenges
 
@@ -64,7 +65,6 @@ This application was created as part of a mod 3 challenge project in the Turing 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68252181/104982795-a3b7e000-59c8-11eb-9b3b-5b7e5ac761e2.gif)
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/68252181/105083773-9fd0a000-5a52-11eb-9c02-6780a195c481.gif)
 <img width="600" alt="Screen Shot 2021-01-18 at 8 07 16 PM" src="https://user-images.githubusercontent.com/68252181/104982882-d366e800-59c8-11eb-8564-1ac8349a95fe.png">
-
 
 ## Roadmap
 
