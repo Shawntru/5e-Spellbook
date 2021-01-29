@@ -12,7 +12,8 @@ const App = () => {
       <Nav />
       <div className="App">
         <Switch>
-          <Route exact path="/5e-spellbook" component={Homepage} />
+          <Route exact path="/" component={Homepage} />
+          {/* <Route exact path="/5e-spellbook" component={Homepage} /> */}
           <Route exact path="/spells/:pcClass" component={SpellSearch} />
           <Route exact path="/spellbook" component={SpellBook} />
         </Switch>
