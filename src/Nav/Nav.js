@@ -7,7 +7,7 @@ const Nav = () => {
     <nav className="nav-bar-wrapper" data-testid="nav-bar-test">
       <div className="nav-underline-wrapper">
         <div className="gold-left"></div>
-        <Link to={'/5e-spellbook'} className="nav-link">
+        <Link to={'/'} className="nav-link">
           <h3>Select a Class</h3>
         </Link>
         <h2 className="site-title">The Dusty Tome</h2>
