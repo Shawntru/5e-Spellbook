@@ -75,6 +75,8 @@ Several features planned for the future include:
 - Sorting by spell level in the Spell Search view
 - One click navigation from the spell index in the Spell Book view
 - Removing spells from Spell Book through the index
+- Local Data Storage overhaul, consolidate data through stringify and storing as JSON object
+- Better dynamic/adaptive sizing 
 
 ## Credits
 
