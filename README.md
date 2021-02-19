@@ -6,8 +6,6 @@
 
 ### [Deployed Heroku App](https://the-dusty-tome.herokuapp.com/)
 
-#### [Project Spec](https://frontend.turing.io/projects/module-3/binary-challenge.html)
-
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/68252181/104980901-dbbd2400-59c4-11eb-9e19-8e4cea98827b.gif)
 
 ## Table of Contents
