@@ -35,6 +35,8 @@ This application was created as part of a mod 3 challenge project in the Turing 
 >
 > Start the application `$ npm start`
 
+(Or just visit the deployed site [here](https://the-dusty-tome.herokuapp.com/))
+
 ## Technologies and Tools
 
 - JavaScript (ES6)
