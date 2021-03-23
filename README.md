@@ -61,6 +61,7 @@ This application was created as part of a mod 3 challenge project in the Turing 
 - Realizing entire project scope within 5 days, including creating a robust testing suite
 - Interactive Styling
 - Creating a fast and responsive app utilizing React
+- Cemented understanding of CSS Keyframe animation by creating all animations from scratch
 
 ## Screenshots
 
